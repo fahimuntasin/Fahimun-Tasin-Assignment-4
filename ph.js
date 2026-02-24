@@ -31,7 +31,25 @@ const jobs = [
       description: "Design scalable backend systems using Python and AWS."
     }
 
-]
+];
 
 
-console.log(jobs)
+// console.log(jobs)
+let currentFilter = "all";
+
+  function updateCounts() {
+    document.getElementById("totalCount").textContent = jobs.length;
+    document.getElementById("interviewCount").textContent =
+      jobs.filter(job => job.status === "interview").length;
+    document.getElementById("rejectedCount").textContent =
+      jobs.filter(job => job.status === "rejected").length;
+  }
+
+  function setFilter(filter) {
+    currentFilter = filter;
+
+    document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("tab-active"));
+    event.target.classList.add("tab-active");
+    renderJobs();
+  }
+
