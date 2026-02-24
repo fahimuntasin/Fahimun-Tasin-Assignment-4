@@ -9,13 +9,13 @@ const div = document.createElement("div");
 div.textContent = "javaaascipt";
 document.body.appendChild(div);
 
-1. Event Bubbling
+3. Event Bubbling
 Event starts at inner element and bubbles up to parents.
 
-2. Event Delegation
+4. Event Delegation
 Attach one event to parent to handle all child events; useful for dynamic elements.
 
-3. preventDefault() vs stopPropagation()
+5. preventDefault() vs stopPropagation()
 preventDefault() > stop actions like link click
 
 stopPropagation() > stop bubbling
