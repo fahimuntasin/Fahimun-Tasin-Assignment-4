@@ -14,6 +14,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 </head>
+<style>
+body {
+    font-family: 'Geist', sans-serif;
+}
+</style>
 <body class="bg-base-200 min-h-screen">
     <div class="max-w-6xl mx-auto p-4 md:p-8">
 
@@ -45,14 +50,27 @@
     </div>
    </div>
        <div class="tabs tabs-boxed mb-6 w-full sm:w-auto">
-      <button class="tab tab-active" onclick="setFilter('all')">All</button>
+      <button class="tab tab-active"onclick="setFilter('all')">All</button>
       <button class="tab" onclick="setFilter('interview')">Interview</button>
       <button class="tab" onclick="setFilter('rejected')">Rejected</button>
     </div>
 
-      
+      <div id="jobsContainer" class="space-y-4"></div>
+
+
+    <div id="emptyState" class="hidden">
+      <div class="card bg-base-100 shadow mt-10">
+        <div class="card-body items-center text-center p-12">
+          <div class="text-5xl">📄</div>
+          <h2 class="card-title mt-4">No jobs available</h2>
+          <p class="opacity-70">Check back soon for new opportunities</p>
+        </div>
+      </div>
+    </div>
 
 
 
+
+<script src="./ph.js"></script>
 </body>
 </html>
