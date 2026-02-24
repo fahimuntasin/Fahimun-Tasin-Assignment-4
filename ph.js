@@ -1,4 +1,4 @@
-const jobs = [
+ const jobs = [
     {
       id: 1,
       company: "Mobile First Corp",
@@ -19,8 +19,7 @@ const jobs = [
       status: "not_applied",
       description: "Create stunning web experiences for high-profile clients."
     },
-
-{
+    {
       id: 3,
       company: "CloudFirst Inc",
       role: "Backend Developer",
@@ -30,12 +29,11 @@ const jobs = [
       status: "not_applied",
       description: "Design scalable backend systems using Python and AWS."
     }
+  ];
 
-];
+  let currentFilter = "all";
 
 
-// console.log(jobs)
-let currentFilter = "all";
 
   function updateCounts() {
     document.getElementById("totalCount").textContent = jobs.length;
@@ -50,8 +48,30 @@ let currentFilter = "all";
 
     document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("tab-active"));
     event.target.classList.add("tab-active");
+
     renderJobs();
   }
+
+  function updateStatus(id, status) {
+    const job = jobs.find(j => j.id === id);
+    job.status = status;
+    updateCounts();
+    renderJobs();
+  }
+
+
+
+
+function deleteJob(id) {
+  const index = jobs.findIndex(job => job.id === id);
+
+  if (index !== -1) {
+    jobs.splice(index, 1);
+  }
+
+  updateCounts();
+  renderJobs();
+}
 
   function renderJobs() {
     const container = document.getElementById("jobsContainer");
@@ -70,19 +90,21 @@ let currentFilter = "all";
       emptyState.classList.add("hidden");
     }
 
-
     filteredJobs.forEach(job => {
-          const badgeClass = job.status === "interview" ? "badge-success" : job.status === "rejected" ? "badge-error" : "badge-neutral";
-    
+      const badgeClass =
+        job.status === "interview"
+          ? "badge-success"
+          : job.status === "rejected"
+          ? "badge-error"
+          : "badge-ghost";
 
-  const badgeText =
+      const badgeText =
         job.status === "not_applied"
           ? "NOT APPLIED"
           : job.status.toUpperCase();
- 
- 
-          const card = document.createElement("div");
+
+      const card = document.createElement("div");
       card.className = "card bg-base-100 shadow";
 
 
-      card.innerHTML = `
+  
