@@ -83,3 +83,6 @@ let currentFilter = "all";
  
           const card = document.createElement("div");
       card.className = "card bg-base-100 shadow";
+
+
+      card.innerHTML = `
