@@ -19,8 +19,19 @@
       status: "not_applied",
       description: "Create stunning web experiences for high-profile clients."
     },
-    {
-      id: 3,
+{
+  id: 3,
+  company: "DataViz Solutions",
+  role: "Data Visualization Specialist",
+  location: "Boston, MA",
+  type: "Full-time",
+  salary: "$115,000 - $155,000",
+  status: "not_applied",
+  description: "Transform complex datasets into clear dashboards and visual reports using D3.js, React, and analytics tools."
+},
+
+ {
+      id: 4,
       company: "CloudFirst Inc",
       role: "Backend Developer",
       location: "Seattle, WA",
@@ -28,7 +39,52 @@
       salary: "$140,000 - $190,000",
       status: "not_applied",
       description: "Design scalable backend systems using Python and AWS."
-    }
+    },
+
+{
+  id: 5,
+  company: "Innovation Labs",
+  role: "UI/UX Engineer",
+  location: "Austin, TX",
+  type: "Full-time",
+  salary: "$110,000 - $150,000",
+  status: "not_applied",
+  description: "Develop intuitive interfaces and collaborate with product teams to deliver user-centered digital experiences."
+},
+
+
+{
+  id: 6,
+  company: "MegaCorp Solutions",
+  role: "JavaScript Developer",
+  location: "New York, NY",
+  type: "Full-time",
+  salary: "$130,000 - $170,000",
+  status: "not_applied",
+  description: "Build enterprise-grade applications using modern JavaScript frameworks. Focus on performance and maintainable code."
+},
+{
+  id: 7,
+  company: "StartupXYZ",
+  role: "Full Stack Engineer",
+  location: "Remote",
+  type: "Full-time",
+  salary: "$120,000 - $160,000",
+  status: "not_applied",
+  description: "Work on both frontend and backend systems using React and Node.js. Contribute to architecture decisions in a fast-growing startup."
+},
+
+{
+  id: 8,
+  company: "TechCorp Industries",
+  role: "Senior Frontend Developer",
+  location: "San Francisco, CA",
+  type: "Full-time",
+  salary: "$130,000 - $175,000",
+  status: "not_applied",
+  description: "Lead frontend development using React and TypeScript. Improve UI performance and mentor junior developers."
+}
+
   ];
 
   let currentFilter = "all";
