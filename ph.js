@@ -53,3 +53,33 @@ let currentFilter = "all";
     renderJobs();
   }
 
+  function renderJobs() {
+    const container = document.getElementById("jobsContainer");
+    const emptyState = document.getElementById("emptyState");
+
+    container.innerHTML = "";
+
+    const filteredJobs = jobs.filter(job => {
+      if (currentFilter === "all") return true;
+      return job.status === currentFilter;
+    });
+
+    if (filteredJobs.length === 0) {
+      emptyState.classList.remove("hidden");
+    } else {
+      emptyState.classList.add("hidden");
+    }
+
+
+    filteredJobs.forEach(job => {
+          const badgeClass = job.status === "interview" ? "badge-success" : job.status === "rejected" ? "badge-error" : "badge-neutral";
+    
+
+  const badgeText =
+        job.status === "not_applied"
+          ? "NOT APPLIED"
+          : job.status.toUpperCase();
+ 
+ 
+          const card = document.createElement("div");
+      card.className = "card bg-base-100 shadow";
